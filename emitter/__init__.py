@@ -88,7 +88,7 @@ def successor(emitter: Listenable[Event]) -> Future[Event]:
     once it's been emitted by the `emitter`
     """
 
-    future = Future()
+    future: Future[Event] = Future()
 
     def handler(event: Event):
         unlisten()
